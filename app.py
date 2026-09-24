@@ -25,7 +25,7 @@ email = st.text_input("Email")
 
 if st.button("Cadastrar"):
     cursor.execute(
-        "INSERT INTO cliente (nome, cpf, email) VALUES (%s,%s,%s)",
+        "INSERT INTO clientes (nome, cpf, email) VALUES (%s,%s,%s)",
         (nome, "00000000000", email)
     )
     conn.commit()
