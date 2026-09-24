@@ -19,3 +19,14 @@ dados = cursor.fetchall()
 
 for nome, email in dados:
     st.write(f"{nome} - {email}")
+
+nome = st.text_input("Nome")
+email = st.text_input("Email")
+
+if st.button("Cadastrar"):
+    cursor.execute(
+        "INSERT INTO cliente (nome, cpf, email) VALUES (%s,%s,%s)",
+        (nome, "00000000000", email)
+    )
+    conn.commit()
+    st.success("Cadastrado com sucesso!")
